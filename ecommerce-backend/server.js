@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const customerRoutes = require("./routes/customerRoutes");
 const importDataRoute = require("./routes/importData");
+const orderRoutes = require("./routes/orderRoutes");
 
 dotenv.config();
 const app = express();
@@ -22,6 +23,7 @@ mongoose
 // Routes
 app.use("/api/customers", customerRoutes);
 app.use("/api/import", importDataRoute);
+app.use("/api/orders", orderRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
